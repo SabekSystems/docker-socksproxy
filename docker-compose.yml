@@ -23,7 +23,7 @@ services:
       user: "1000"
       volumes:
         - /tmp/mysql:/var/lib/mysql
-        #- /srv/socks/etc/mysql:/etc/mysql/conf.d
+        - /tmp/etc/mysql:/etc/mysql/conf.d
       environment:
         - MYSQL_USER=root
         - MYSQL_ROOT_PASSWORD=Gt3ds59Mdsm-d
