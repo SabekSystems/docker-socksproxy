@@ -22,8 +22,8 @@ services:
       restart: always
       user: "1000"
       volumes:
-        - /data/mysql:/var/lib/mysql
-        - /data/etc/mysql:/etc/mysql/conf.d
+        - data/mysql:/var/lib/mysql
+        - data/etc/mysql:/etc/mysql/conf.d
       environment:
         - MYSQL_USER=root
         - MYSQL_ROOT_PASSWORD=Gt3ds59Mdsm-d
@@ -31,19 +31,19 @@ services:
         - dante-net
         
     # mysql:
-    #     image: mysql
-    #     restart: always
-    #     environment:
-    #       MYSQL_DATABASE: 'db'
-    #       MYSQL_USER: 'root'
-    #       MYSQL_PASSWORD: 'Gt3ds59Mdsm-d'
-    #       MYSQL_ROOT_PASSWORD: 'Gt3ds59Mdsm-d'
-    #     ports:
-    #       - '3306:3306'
-    #     expose:
-    #       - '3306'
-    #     volumes:
-    #       - my-db:/var/lib/mysql
+    #   image: mysql
+    #   restart: always
+    #   environment:
+    #     MYSQL_DATABASE: 'db'
+    #     MYSQL_USER: 'root'
+    #     MYSQL_PASSWORD: 'Gt3ds59Mdsm-d'
+    #     MYSQL_ROOT_PASSWORD: 'Gt3ds59Mdsm-d'
+    #   ports:
+    #     - '3306:3306'
+    #   expose:
+    #     - '3306'
+    #   volumes:
+    #     - data/mysql:/var/lib/mysql
 
     freeradius:
       container_name: freeradius
