@@ -35,9 +35,9 @@ services:
       restart: always
       environment:
         MYSQL_DATABASE: 'db'
-        MYSQL_USER: 'root'
-        MYSQL_PASSWORD: 'Gt3ds59Mdsm-d'
-        MYSQL_ROOT_PASSWORD: 'Gt3ds59Mdsm-d'
+        MYSQL_USER: 'radius'
+        MYSQL_PASSWORD: 'Awdfg3BVd2'
+        MYSQL_ROOT_PASSWORD: 'Awdfg3BVd2'
       ports:
         - '3306:3306'
       expose:
