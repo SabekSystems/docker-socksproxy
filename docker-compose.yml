@@ -16,34 +16,34 @@ services:
       networks:
         - dante-net
 
-    mysql:
-      container_name: mysql
-      image: mysql
-      restart: always
-      user: "1000"
-      volumes:
-        - mysql:/var/lib/mysql
-        - /tmp/data/etc/mysql:/etc/mysql/conf.d
-      environment:
-        - MYSQL_USER=root
-        - MYSQL_ROOT_PASSWORD=Gt3ds59Mdsm-d
-      networks:
-        - dante-net
-        
     # mysql:
+    #   container_name: mysql
     #   image: mysql
     #   restart: always
-    #   environment:
-    #     MYSQL_DATABASE: 'db'
-    #     MYSQL_USER: 'root'
-    #     MYSQL_PASSWORD: 'Gt3ds59Mdsm-d'
-    #     MYSQL_ROOT_PASSWORD: 'Gt3ds59Mdsm-d'
-    #   ports:
-    #     - '3306:3306'
-    #   expose:
-    #     - '3306'
+    #   user: "1000"
     #   volumes:
-    #     - data/mysql:/var/lib/mysql
+    #     - mysql:/var/lib/mysql
+    #     - /tmp/data/etc/mysql:/etc/mysql/conf.d
+    #   environment:
+    #     - MYSQL_USER=root
+    #     - MYSQL_ROOT_PASSWORD=Gt3ds59Mdsm-d
+    #   networks:
+    #     - dante-net
+        
+    mysql:
+      image: mysql
+      restart: always
+      environment:
+        MYSQL_DATABASE: 'db'
+        MYSQL_USER: 'root'
+        MYSQL_PASSWORD: 'Gt3ds59Mdsm-d'
+        MYSQL_ROOT_PASSWORD: 'Gt3ds59Mdsm-d'
+      ports:
+        - '3306:3306'
+      expose:
+        - '3306'
+      volumes:
+        - mydb:/var/lib/mysql
 
     freeradius:
       container_name: freeradius
@@ -87,4 +87,4 @@ networks:
     dante-net:
       driver: bridge
 volumes:
-  mysql:
+  mydb:
